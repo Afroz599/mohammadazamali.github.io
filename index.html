@@ -2,36 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Mohammad Azam Ali | National Awardee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Dr. Mohammad Azam Ali | National Awardee</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --navy: #0B1F3A; --white: #FFFFFF; --gold: #C9A24D;
-            --grey: #F4F6F8; --charcoal: #2E2E2E;
-        }
+        :root { --navy: #0B1F3A; --white: #FFFFFF; --gold: #C9A24D; --grey: #F4F6F8; --charcoal: #2E2E2E; }
         body { font-family: 'Inter', sans-serif; background-color: var(--grey); color: var(--charcoal); margin: 0; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--navy); }
         
+        /* Responsive Nav */
         .navbar { background: var(--navy); border-bottom: 4px solid var(--gold); padding: 1rem 0; }
-        .nav-link { color: var(--white) !important; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 15px; transition: 0.3s; }
+        .nav-link { color: var(--white) !important; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 10px; }
         .nav-link:hover { color: var(--gold) !important; }
 
-        .hero { background: var(--white); padding: 100px 0; border-bottom: 1px solid #ddd; }
-        .hero-title { font-size: 3.5rem; border-left: 8px solid var(--gold); padding-left: 25px; margin-bottom: 20px; }
-        .profile-img-main { width: 100%; max-width: 400px; border: 12px solid var(--white); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-radius: 4px; }
+        /* Hero Scaling */
+        .hero { background: var(--white); padding: 80px 0; border-bottom: 1px solid #ddd; }
+        .hero-title { font-size: clamp(2.5rem, 5vw, 3.5rem); border-left: 8px solid var(--gold); padding-left: 25px; margin-bottom: 20px; } /* Auto-scales text */
         
-        .btn-navy { background: var(--navy); color: var(--white); padding: 12px 30px; border: 2px solid var(--navy); font-weight: bold; transition: 0.3s; text-decoration: none; display: inline-block; }
+        .profile-img-main { 
+            width: 100%; 
+            max-width: 350px; 
+            height: auto; 
+            border: 8px solid var(--white); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+            border-radius: 4px; 
+        }
+        
+        .btn-navy { background: var(--navy); color: var(--white); padding: 12px 30px; border: 2px solid var(--navy); font-weight: bold; text-decoration: none; display: inline-block; transition: 0.3s; }
         .btn-navy:hover { background: transparent; color: var(--navy); border-color: var(--gold); }
         
         .stats-bar { background: var(--navy); color: var(--gold); padding: 40px 0; text-align: center; }
+        
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero { text-align: center; padding: 40px 0; }
+            .hero-title { border-left: none; border-bottom: 5px solid var(--gold); padding-left: 0; padding-bottom: 15px; }
+            .profile-img-main { margin-top: 30px; max-width: 250px; }
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand text-white fw-bold" href="index.html">DR. MD. AZAM ALI</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="about.html">Profile</a></li>
@@ -53,8 +69,8 @@
                     <p class="lead mb-4" style="font-size: 1.25rem; color: #555;">Assistant Professor of English & Social Activist. Dedicated to bridging the gap between academic excellence and social responsibility.</p>
                     <a href="about.html" class="btn-navy">Executive Summary</a>
                 </div>
-                <div class="col-lg-5 text-center">
-                    <img src="https://media.licdn.com/dms/image/v2/D5603AQFkzSsCgZFHFw/profile-displayphoto-crop_800_800/B56ZsoEuQNG8AM-/0/1765903886724?e=1771459200&v=beta&t=5Uv-2__rwsDNeInlYk_FeAdGUW45FJC3zfl7HeBJmzY" class="profile-img-main" alt="Dr. Azam Ali">
+                <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQFkzSsCgZFHFw/profile-displayphoto-crop_800_800/B56ZsoEuQNG8AM-/0/1765903886724?e=1771459200&v=beta&t=5Uv-2__rwsDNeInlYk_FeAdGUW45FJC3zfl7HeBJmzY" class="profile-img-main img-fluid" alt="Dr. Azam Ali">
                 </div>
             </div>
         </div>
@@ -62,12 +78,13 @@
 
     <div class="stats-bar">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4"><h3>15+ Years</h3><p class="text-white">Social Service</p></div>
-                <div class="col-md-4"><h3>10+ Years</h3><p class="text-white">Teaching Excellence</p></div>
-                <div class="col-md-4"><h3>National</h3><p class="text-white">Honor & Recognition</p></div>
+            <div class="row g-4"> <div class="col-12 col-md-4"><h3>15+ Years</h3><p class="text-white mb-0">Social Service</p></div>
+                <div class="col-12 col-md-4"><h3>10+ Years</h3><p class="text-white mb-0">Teaching Excellence</p></div>
+                <div class="col-12 col-md-4"><h3>National</h3><p class="text-white mb-0">Honor & Recognition</p></div>
             </div>
         </div>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

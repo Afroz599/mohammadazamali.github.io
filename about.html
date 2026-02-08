@@ -2,46 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Dr.MD. Azam Ali</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --navy: #001f3f; --gold: #c5a021; }
-        body { background-color: #f0f2f5; color: #333; }
+        :root { --navy: #0B1F3A; --gold: #C9A24D; --grey: #F4F6F8; --white: #ffffff; }
+        body { background-color: var(--grey); font-family: 'Inter', sans-serif; margin: 0; }
+        
+        /* Navbar (Same as Index) */
+        .navbar { background: var(--navy); border-bottom: 4px solid var(--gold); padding: 1rem 0; }
+        .nav-link { color: var(--white) !important; font-weight: 600; text-transform: uppercase; margin: 0 10px; }
+        
         .about-header { background: var(--navy); color: white; padding: 60px 0; border-bottom: 5px solid var(--gold); }
         .profile-box { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-top: -50px; }
         .accent-text { color: var(--gold); font-weight: bold; }
         .card-philosophy { border-left: 5px solid var(--gold); background: #fff9e6; padding: 20px; border-radius: 0 10px 10px 0; }
-        .animate-in { animation: slideIn 0.8s ease-out; }
-        @keyframes slideIn { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
-    </style>
-</head>
-<body>
-       <style>
-        :root {
-            --navy: #0B1F3A; --white: #FFFFFF; --gold: #C9A24D;
-            --grey: #F4F6F8; --charcoal: #2E2E2E;
+        
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .profile-box { margin-top: 0; border-radius: 0; padding: 25px; }
+            .display-4 { font-size: 2.5rem; }
         }
-        body { font-family: 'Inter', sans-serif; background-color: var(--grey); color: var(--charcoal); margin: 0; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--white); }
-        
-        .navbar { background: var(--navy); border-bottom: 4px solid var(--gold); padding: 1rem 0; }
-        .nav-link { color: var(--white) !important; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 15px; transition: 0.3s; }
-        .nav-link:hover { color: var(--gold) !important; }
-
-        .hero { background: var(--white); padding: 100px 0; border-bottom: 1px solid #ddd; }
-        .hero-title { font-size: 3.5rem; border-left: 8px solid var(--gold); padding-left: 25px; margin-bottom: 20px; }
-        .profile-img-main { width: 100%; max-width: 400px; border: 12px solid var(--white); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-radius: 4px; }
-        
-        .btn-navy { background: var(--navy); color: var(--white); padding: 12px 30px; border: 2px solid var(--navy); font-weight: bold; transition: 0.3s; text-decoration: none; display: inline-block; }
-        .btn-navy:hover { background: transparent; color: var(--navy); border-color: var(--gold); }
-        
-        .stats-bar { background: var(--navy); color: var(--gold); padding: 40px 0; text-align: center; }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand text-white fw-bold" href="index.html">DR. MD. AZAM ALI</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="about.html">Profile</a></li>
@@ -53,22 +44,26 @@
             </div>
         </div>
     </nav>
+
     <div class="about-header text-center">
-        <h1 class="display-4 fw-bold ">Professional Profile</h1>
+        <h1 class="display-4 fw-bold" style="font-family: 'Playfair Display';">Professional Profile</h1>
         <p class="lead">Educator • Researcher • Visionary</p>
     </div>
-    <div class="container animate-in">
+    
+    <div class="container mb-5">
         <div class="row justify-content-center">
-            <div class="col-lg-10 profile-box">
-                <h2 class="mb-4">Academician & Social Reformer</h2>
-                <p>Dr.Mohammad Azam Ali is an <span class="accent-text">Assistant Professor of English</span> at Vaagdevi Engineering College, Warangal.With a Ph.D. in English from Kakatiya University, he has spent over a decade enriching the lives of students at the graduation level.</p>
+            <div class="col-lg-10 col-12 profile-box">
+                <h2 class="mb-4" style="color: var(--navy); font-family: 'Playfair Display';">Academician & Social Reformer</h2>
+                <p>Dr. Mohammad Azam Ali is an <span class="accent-text">Assistant Professor of English</span> at Vaagdevi Engineering College, Warangal. With a Ph.D. in English from Kakatiya University, he has spent over a decade enriching the lives of students at the graduation level.</p>
                 <div class="card-philosophy my-4">
                     <h5>Vision Statement</h5>
-                    <p class="mb-0">"To inspire and transform the youth of today into the leaders of tomorrow".</p>
+                    <p class="mb-0 fst-italic">"To inspire and transform the youth of today into the leaders of tomorrow."</p>
                 </div>
-                <p>His academic roots in government institutions have shaped his passion for ESL (English as a Second Language) and communication skills training.He is not only a teacher but a mentor who bridges the gap between classroom learning and real-world leadership.</p>
+                <p>His academic roots in government institutions have shaped his passion for ESL (English as a Second Language) and communication skills training. He is not only a teacher but a mentor who bridges the gap between classroom learning and real-world leadership.</p>
             </div>
         </div>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

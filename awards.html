@@ -7,121 +7,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --navy: #0B1F3A;
-            --white: #FFFFFF;
-            --gold: #C9A24D;
-            --grey: #F4F6F8;
-            --charcoal: #2E2E2E;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--grey);
-            color: var(--charcoal);
-            margin: 0;
-        }
-
+        :root { --navy: #0B1F3A; --white: #FFFFFF; --gold: #C9A24D; --grey: #F4F6F8; --charcoal: #2E2E2E; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--grey); color: var(--charcoal); margin: 0; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
         /* Navigation */
         .navbar { background: var(--navy); border-bottom: 4px solid var(--gold); }
         .nav-link { color: var(--white) !important; font-weight: 600; text-transform: uppercase; margin: 0 15px; }
-        .nav-link:hover { color: var(--gold) !important; }
 
         /* Header with Profile Badge */
-        .awards-header {
-            background: var(--navy);
-            color: var(--white);
-            padding: 80px 0;
-            text-align: center;
-            border-bottom: 1px solid rgba(201, 162, 77, 0.3);
-        }
-        .profile-badge-small {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            border: 3px solid var(--gold);
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
+        .awards-header { background: var(--navy); color: var(--white); padding: 60px 0; text-align: center; border-bottom: 1px solid rgba(201, 162, 77, 0.3); }
+        .profile-badge-small { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--gold); margin-bottom: 20px; object-fit: cover; }
 
-        /* Award Card Styling */
-        .featured-award {
-            background: var(--white);
-            border: 1px solid #ddd;
-            border-top: 8px solid var(--gold);
-            margin-top: -50px;
-            padding: 50px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-radius: 4px;
-        }
+        /* Featured Award */
+        .featured-award { background: var(--white); border: 1px solid #ddd; border-top: 8px solid var(--gold); margin-top: -30px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-radius: 4px; }
+        
+        /* Responsive Image Holder */
+        .award-img-holder { background: #e9ecef; border: 2px solid var(--gold); width: 100%; position: relative; overflow: hidden; margin-bottom: 20px; }
+        .award-img-holder img { width: 100%; height: auto; object-fit: cover; }
 
-        .award-img-holder {
-            background: #e9ecef;
-            border: 2px solid var(--gold);
-            width: 100%;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 30px;
-        }
+        .medal-icon { color: var(--gold); font-size: 1.5rem; margin-bottom: 10px; }
+        .award-divider { width: 60px; height: 3px; background: var(--gold); margin: 20px 0; }
+        
+        .sub-award-card { background: var(--white); border: 1px solid #eee; padding: 25px; height: 100%; transition: 0.3s; }
+        .sub-award-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        
+        .btn-gold-outline { border: 2px solid var(--gold); color: var(--navy); padding: 10px 25px; font-weight: bold; text-decoration: none; display: inline-block; transition: 0.3s; margin-top: 15px; }
+        .btn-gold-outline:hover { background: var(--gold); color: var(--white); }
 
-        .award-img-holder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .medal-icon {
-            color: var(--gold);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .award-divider {
-            width: 60px;
-            height: 3px;
-            background: var(--gold);
-            margin: 20px 0;
-        }
-
-        /* Secondary Awards Grid */
-        .sub-award-card {
-            background: var(--white);
-            border: 1px solid #eee;
-            padding: 30px;
-            height: 100%;
-            transition: 0.3s;
-        }
-        .sub-award-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-5px);
-        }
-        .img-holder-small {
-            width: 100%;
-            height: 220px;
-            background: #eee;
-            margin-bottom: 20px;
-            border-bottom: 3px solid var(--navy);
-        }
-
-        .btn-gold-outline {
-            border: 2px solid var(--gold);
-            color: var(--navy);
-            padding: 10px 25px;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.3s;
-            margin-top: 15px;
-        }
-        .btn-gold-outline:hover {
-            background: var(--gold);
-            color: var(--white);
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .featured-award { margin-top: 0; padding: 20px; border-radius: 0; }
+            .award-divider { margin: 15px auto; }
+            .col-md-6.ps-md-5 { text-align: center; } /* Center text on mobile */
         }
     </style>
 </head>
@@ -130,6 +48,9 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand text-white fw-bold" href="index.html">DR. MD. AZAM ALI</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="about.html">Profile</a></li>
@@ -146,26 +67,26 @@
         <div class="container text-center">
             <img src="https://static.wixstatic.com/media/9bbd54_063331512baa4e66a6438849a387aec6~mv2.jpg/v1/fill/w_330,h_436,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1%20President.jpg" class="profile-badge-small" alt="Dr.MD Azam Ali">
             <h1 class="display-5 fw-bold">Honors & National Recognition</h1>
-            <p class="text-uppercase tracking-widest" style="color: var(--gold); letter-spacing: 2px;">Acknowledging Excellence in Education & Social Welfare</p>
+            <p class="text-uppercase" style="color: var(--gold); letter-spacing: 2px;">Acknowledging Excellence in Education & Social Welfare</p>
         </div>
     </div>
 
     <div class="container pb-5">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="featured-award">
                     <div class="row align-items-center">
-                        <div class="col-md-6">
+                        <div class="col-lg-6 col-12">
                             <div class="award-img-holder">
-                                <img src="https://static.wixstatic.com/media/9bbd54_8e899b2cedfc4cbd9e8b4e73d5b878a8~mv2.jpg/v1/fit/w_1180,h_786,q_90,enc_avif,quality_auto/9bbd54_8e899b2cedfc4cbd9e8b4e73d5b878a8~mv2.jpg" alt="Indira Gandhi NSS Award Ceremony">
+                                <img src="https://static.wixstatic.com/media/9bbd54_8e899b2cedfc4cbd9e8b4e73d5b878a8~mv2.jpg/v1/fit/w_1180,h_786,q_90,enc_avif,quality_auto/9bbd54_8e899b2cedfc4cbd9e8b4e73d5b878a8~mv2.jpg" class="img-fluid" alt="Indira Gandhi NSS Award Ceremony">
                             </div>
                         </div>
-                        <div class="col-md-6 ps-md-5">
+                        <div class="col-lg-6 col-12 ps-lg-5">
                             <div class="medal-icon">✦ ✦ ✦</div>
                             <h2 style="color: var(--navy);">Indira Gandhi NSS National Award</h2>
                             <p class="text-muted fw-bold">Presented by the President of India | 2013</p>
                             <div class="award-divider"></div>
-                            <p class="lead" style="color: var(--charcoal);">One of the highest civilian honors for youth and social service in India. Honored at Rashtrapati Bhavan, New Delhi, for exceptional contribution to community development through the National Service Scheme.</p>
+                            <p class="lead" style="color: var(--charcoal); font-size: 1rem;">One of the highest civilian honors for youth and social service in India. Honored at Rashtrapati Bhavan, New Delhi, for exceptional contribution to community development through the National Service Scheme.</p>
                             <a href="gallery.html" class="btn-gold-outline">View Ceremony Gallery</a>
                         </div>
                     </div>
@@ -174,35 +95,35 @@
         </div>
 
         <div class="row mt-5 g-4">
-            <div class="col-md-5">
+            <div class="col-md-6 col-12">
                 <div class="sub-award-card">
-                    <div class="img-holder-small">
-                        <img src="https://static.wixstatic.com/media/9bbd54_20fd869391134a68a32fd632e63badf3~mv2.jpg/v1/fit/w_750,h_868,q_90,enc_avif,quality_auto/9bbd54_20fd869391134a68a32fd632e63badf3~mv2.jpg" alt="National Youth Award" style="width:100%; height:100%; object-fit:cover;">
+                    <div class="award-img-holder">
+                        <img src="https://static.wixstatic.com/media/9bbd54_20fd869391134a68a32fd632e63badf3~mv2.jpg/v1/fit/w_750,h_868,q_90,enc_avif,quality_auto/9bbd54_20fd869391134a68a32fd632e63badf3~mv2.jpg" class="img-fluid" alt="National Youth Award">
                     </div>
                     <h3 style="color: var(--navy);">National Youth Award</h3>
                     <p style="color: var(--gold); font-weight: bold;">Govt. of India | 2017-18</p>
-                    <p>Recognized by the Ministry of Youth Affairs and Sports for consistent dedication to social transformation and youth leadership initiatives.</p>
+                    <p>Recognized by the Ministry of Youth Affairs and Sports for consistent dedication to social transformation.</p>
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 col-12">
                 <div class="sub-award-card">
-                    <div class="img-holder-small">
-                        <img src="https://static.wixstatic.com/media/9bbd54_038a1b3d16014ef8a6ac052c8be6e9f4~mv2.jpg/v1/fill/w_1901,h_913,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/9bbd54_038a1b3d16014ef8a6ac052c8be6e9f4~mv2.jpg" alt="Academic Award" style="width:100%; height:100%; object-fit:cover;">
+                    <div class="award-img-holder">
+                        <img src="https://static.wixstatic.com/media/9bbd54_038a1b3d16014ef8a6ac052c8be6e9f4~mv2.jpg/v1/fill/w_1901,h_913,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/9bbd54_038a1b3d16014ef8a6ac052c8be6e9f4~mv2.jpg" class="img-fluid" alt="Academic Award">
                     </div>
                     <h3 style="color: var(--navy);">Outstanding Academic Service</h3>
                     <p style="color: var(--gold); font-weight: bold;">Institutional Honors</p>
-                    <p>Commended for excellence in English Language Teaching and for organizing numerous national-level seminars and ESL workshops.</p>
+                    <p>Commended for excellence in English Language Teaching and ESL workshops.</p>
                 </div>
             </div>
         </div>
     </div>
-
+    
     <footer style="background: var(--navy); color: var(--white); padding: 40px 0; border-top: 5px solid var(--gold);">
         <div class="container text-center">
             <p style="margin: 0; opacity: 0.8;">© 2024 Dr. Mohammad Azam Ali. All Rights Reserved.</p>
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

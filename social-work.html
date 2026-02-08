@@ -6,25 +6,136 @@
     <title>Social Impact | Dr.MD Azam Ali</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --navy: #0B1F3A; --gold: #C9A24D; --green: #1B5E20; --white: #FFFFFF; --grey: #F4F6F8; }
-        body { background: var(--grey); color: #2E2E2E; font-family: 'Inter', sans-serif; margin: 0; }
+        /* 1. Define Colors */
+        :root {
+            --navy: #0B1F3A; 
+            --gold: #C9A24D; 
+            --green: #1B5E20; 
+            --white: #FFFFFF; 
+            --grey: #F4F6F8; 
+            --text-dark: #222222;
+        }
+
+        /* 2. Global Resets */
+        body { 
+            background-color: var(--grey); 
+            color: var(--text-dark); 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            padding-top: 0;
+        }
         
-        /* Navbar */
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* 3. Navigation Bar */
         .navbar { background: var(--navy); border-bottom: 4px solid var(--gold); padding: 1rem 0; }
         .nav-link { color: var(--white) !important; font-weight: 600; text-transform: uppercase; margin: 0 10px; }
+        .nav-link:hover { color: var(--gold) !important; }
 
-        .header-bg { background: var(--navy); color: var(--white); padding: 60px 0; border-bottom: 5px solid var(--green); }
-        .section-title { border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 5px; margin-bottom: 25px; color: var(--navy); font-family: 'Playfair Display', serif; }
+        /* 4. Page Header */
+        .header-bg { 
+            background-color: var(--navy); 
+            color: var(--white); 
+            padding: 60px 0; 
+            border-bottom: 6px solid var(--green); 
+            margin-bottom: 40px;
+        }
+
+        /* 5. Impact Cards (The Boxes) */
+        .impact-card { 
+            background-color: var(--white); 
+            padding: 40px; 
+            border: 1px solid #ddd; /* Safety Border */
+            border-left: 10px solid var(--green); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .section-title { 
+            border-bottom: 2px solid var(--gold); 
+            display: inline-block; 
+            padding-bottom: 5px; 
+            margin-bottom: 20px; 
+            color: var(--navy); 
+            font-size: 1.75rem;
+        }
         
-        /* Responsive Cards */
-        .impact-card { background: var(--white); padding: 40px; border-left: 10px solid var(--green); box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%; }
+        /* 6. Lists */
         .service-list { padding-left: 0; }
-        .service-list li { margin-bottom: 12px; position: relative; list-style: none; padding-left: 25px; }
-        .service-list li::before { content: "◈"; position: absolute; left: 0; color: var(--gold); }
+        .service-list li { 
+            margin-bottom: 12px; 
+            position: relative; 
+            list-style: none; 
+            padding-left: 25px; 
+            font-size: 1.1rem;
+        }
+        .service-list li::before { 
+            content: "◈"; 
+            position: absolute; 
+            left: 0; 
+            color: var(--gold); 
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
 
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .header-bg { padding: 40px 0; }
-            .impact-card { padding: 25px; margin-bottom: 20px; }
-            h1 { font-
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">DR. MD. AZAM ALI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="academics.html">Academics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="social-work.html">Service</a></li>
+                    <li class="nav-item"><a class="nav-link" href="awards.html">Awards</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header-bg text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Social Responsibility</h1>
+            <p class="lead" style="color: var(--gold); letter-spacing: 2px; font-weight: bold;">LEADERSHIP BEYOND THE CLASSROOM</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto col-12">
+                
+                <div class="impact-card">
+                    [cite_start]<h2 class="section-title">Chamak Foundation [cite: 13, 23]</h2>
+                    <p>As the <strong>Founder President</strong>, Dr. Azam Ali leads "Chamak Padhai Se," a non-profit initiative focused on empowering students through academic resources and counseling.</p>
+                    <ul class="service-list">
+                        [cite_start]<li>Established two motivational libraries for students[cite: 25].</li>
+                        [cite_start]<li>Donated English grammar and motivational books[cite: 25].</li>
+                        [cite_start]<li>Conducted programs on life skills and guidance counseling[cite: 24, 25].</li>
+                    </ul>
+                </div>
+
+                <div class="impact-card" style="border-left-color: var(--navy);">
+                    [cite_start]<h2 class="section-title">National Service Scheme (NSS) [cite: 18, 54]</h2>
+                    [cite_start]<p>A legacy of 8 years as a Volunteer, Student Coordinator, and Team Leader (2006-2014)[cite: 18, 56].</p>
+                    <ul class="service-list">
+                        [cite_start]<li>Organized blood donation drives and medical camps[cite: 19].</li>
+                        [cite_start]<li>Led village adoption programs and tree plantations[cite: 19].</li>
+                        [cite_start]<li>Participated in National Integration Camps and youth exchange programs[cite: 20].</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

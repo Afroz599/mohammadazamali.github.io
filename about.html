@@ -5,20 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Dr.MD. Azam Ali</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=700&family=Inter:wght=400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         :root { --navy: #0B1F3A; --gold: #C9A24D; --grey: #F4F6F8; --white: #ffffff; }
         body { background-color: var(--grey); font-family: 'Inter', sans-serif; margin: 0; }
         
-        /* Navbar (Same as Index) */
+        /* Navbar */
         .navbar { background: var(--navy); border-bottom: 4px solid var(--gold); padding: 1rem 0; }
         .nav-link { color: var(--white) !important; font-weight: 600; text-transform: uppercase; margin: 0 10px; }
         
+        /* Header & Layout Structure */
         .about-header { background: var(--navy); color: white; padding: 60px 0; border-bottom: 5px solid var(--gold); }
         .profile-box { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-top: -50px; }
         .accent-text { color: var(--gold); font-weight: bold; }
         .card-philosophy { border-left: 5px solid var(--gold); background: #fff9e6; padding: 20px; border-radius: 0 10px 10px 0; }
         
+        /* Custom Typography & Sections */
+        .section-heading { color: var(--navy); font-family: 'Playfair Display'; font-weight: 700; margin-top: 2rem; margin-bottom: 1.2rem; position: relative; padding-bottom: 8px; }
+        .section-heading::after { content: ''; position: absolute; left: 0; bottom: 0; width: 45px; height: 3px; background-color: var(--gold); }
+        
+        /* Specialized UI Elements */
+        .badge-spec { background-color: var(--navy); color: var(--white); padding: 8px 16px; font-weight: 500; font-size: 0.88rem; border-radius: 20px; border: 1px solid transparent; display: inline-block; margin-bottom: 5px; }
+        .badge-spec:hover { background-color: var(--gold); color: var(--navy); transition: 0.3s; }
+        
+        .award-item { background: #fdfdfd; border-left: 4px solid var(--navy); padding: 15px; border-radius: 0 8px 8px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+        .foundation-card { background: linear-gradient(135deg, #fbfbfb 0%, #f5f7fa 100%); border: 1px solid rgba(0,0,0,0.05); border-radius: 12px; padding: 25px; }
+
         /* Mobile Adjustments */
         @media (max-width: 768px) {
             .profile-box { margin-top: 0; border-radius: 0; padding: 25px; }
@@ -53,13 +66,64 @@
     <div class="container mb-5">
         <div class="row justify-content-center">
             <div class="col-lg-10 col-12 profile-box">
-                <h2 class="mb-4" style="color: var(--navy); font-family: 'Playfair Display';">Academician & Social Reformer</h2>
-                <p>Dr. Mohammad Azam Ali is an <span class="accent-text">Assistant Professor of English</span> at Vaagdevi Engineering College, Warangal. With a Ph.D. in English from Kakatiya University, he has spent over a decade enriching the lives of students at the graduation level.</p>
+                
+                <!-- Biography Section -->
+                <h2 class="mb-3" style="color: var(--navy); font-family: 'Playfair Display'; font-weight: 700;">Academician & Social Reformer</h2>
+                <p class="lead text-muted" style="font-size: 1.1rem;">Dr. Mohammad Azam Ali is working as an Assistant Professor of English in the Department of Basic Sciences and Humanities at Vaagdevi Engineering College.</p>
+                <p>He obtained his M.A., M.Ed., and Ph.D. in English from Kakatiya University. With over a decade of teaching experience at the undergraduate level, he has been actively involved in academic instruction, research, student mentoring, and personality development initiatives.</p>
+                
                 <div class="card-philosophy my-4">
-                    <h5>Vision Statement</h5>
-                    <p class="mb-0 fst-italic">"To inspire and transform the youth of today into the leaders of tomorrow."</p>
+                    <h5>Mission Statement</h5>
+                    <p class="mb-0 fst-italic">"To transform students into responsible citizens with strong moral values, leadership qualities, social responsibility, and national consciousness."</p>
                 </div>
-                <p>His academic roots in government institutions have shaped his passion for ESL (English as a Second Language) and communication skills training. He is not only a teacher but a mentor who bridges the gap between classroom learning and real-world leadership.</p>
+
+                <!-- Academic Specialization & Publications -->
+                <h3 class="section-heading">Academic Specialization & Research</h3>
+                <p>His core areas of academic expertise encompass a broad literary and instructional scope:</p>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <span class="badge badge-spec">British Literature</span>
+                    <span class="badge badge-spec">American Literature</span>
+                    <span class="badge badge-spec">Indian Writing in English</span>
+                    <span class="badge badge-spec">Post-Colonial Literature</span>
+                    <span class="badge badge-spec">English Language Teaching (ELT)</span>
+                </div>
+                <p>Dr. Azam Ali has published several research papers in UGC CARE-listed journals and peer-reviewed international journals with notable impact factors. He is also the author of the published volume, <span class="fw-semibold text-dark">"Indian Youth Literature: Mapping Young Minds in Changing India."</span> In addition, he has participated in and presented cutting-edge research papers at numerous national and international seminars and conferences.</p>
+
+                <!-- National Recognition & Awards -->
+                <h3 class="section-heading">National Recognitions</h3>
+                <p class="mb-4">Apart from his academic contributions, Dr. Azam Ali is widely recognized for his outstanding service in the fields of youth empowerment and community development.</p>
+                
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6 col-12">
+                        <div class="award-item h-100">
+                            <h6 class="fw-bold mb-1 text-dark"><i class="bi bi-trophy-fill text-warning me-2"></i>Indira Gandhi NSS National Award</h6>
+                            <p class="small text-muted mb-0">Conferred by the then President of India, Pranab Mukherjee, for the year 2012–13 under the Best NSS Volunteer category.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="award-item h-100">
+                            <h6 class="fw-bold mb-1 text-dark"><i class="bi bi-award-fill text-warning me-2"></i>National Youth Award</h6>
+                            <p class="small text-muted mb-0">Received India’s prestigious national decoration for his exemplary contributions towards community service and youth empowerment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Impact & Chamak Foundation -->
+                <h3 class="section-heading">Social Impact & Community Leadership</h3>
+                <div class="foundation-card mb-4">
+                    <h4 class="h5 fw-bold" style="color: var(--navy);">Chamak Foundation <small class="text-muted fst-italic">(“Chamak Padhai Se”)</small></h4>
+                    <p class="mb-3">As the Founder and President, Dr. Azam Ali leads this noted non-profit organization dedicated to the educational empowerment of underprivileged students. Through the foundation, he has been actively working to support poor and marginalized individuals by providing:</p>
+                    <div class="row g-2 text-muted small fw-semibold px-2 mb-3">
+                        <div class="col-sm-6"><i class="bi bi-check2-circle text-success me-2"></i>Academic Guidance & Mentoring</div>
+                        <div class="col-sm-6"><i class="bi bi-check2-circle text-success me-2"></i>Career Counselling</div>
+                        <div class="col-sm-6"><i class="bi bi-check2-circle text-success me-2"></i>Motivational Support</div>
+                        <div class="col-sm-6"><i class="bi bi-check2-circle text-success me-2"></i>Financial Assistance for Meritorious Students</div>
+                    </div>
+                    <p class="mb-0 card-text text-secondary small">As part of his social commitment towards educational development, he has initiated library programs and book distribution activities in schools and rural communities to promote reading habits. The foundation also regularly organizes structural awareness programs and personality development sessions.</p>
+                </div>
+
+                <p>Dr. Azam Ali is also a renowned motivational speaker who has delivered hundreds of inspirational lectures across schools and colleges, motivating and empowering student demographics through his precise guidance and transformative institutional vision.</p>
+
             </div>
         </div>
     </div>

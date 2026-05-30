@@ -3,69 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academics | Dr.MD. Azam Ali</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Academic & Professional Portfolio | Dr. Azam</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f4f6f9',
+                            100: '#e9edf3',
+                            700: '#1a365d', // Deep Slate Blue
+                            800: '#0f2343', // Dark Navy
+                            gold: '#b89047'  // Accent Gold
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --navy: #0B1F3A; --white: #FFFFFF; --gold: #C9A24D; --grey: #F4F6F8; --charcoal: #2E2E2E; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--grey); color: var(--charcoal); margin: 0; }
-        
-        /* Navbar (Same as Index) */
-        .navbar { background: var(--navy); border-bottom: 4px solid var(--gold); padding: 1rem 0; }
-        .nav-link { color: var(--white) !important; font-weight: 600; text-transform: uppercase; margin: 0 10px; }
-
-        .header { background: linear-gradient(to right, #001f3f, #004080); color: white; padding: 50px 0; }
-        .timeline-item { background: white; border-radius: 10px; margin-bottom: 25px; padding: 25px; border-left: 8px solid #c5a021; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .year-label { color: #c5a021; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; }
-        .edu-badge { background: #eef2f3; border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 10px; }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand text-white fw-bold" href="index.html">DR. MD. AZAM ALI</a>
-            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="about.html">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="academics.html">Academics</a></li>
-                    <li class="nav-item"><a class="nav-link" href="social-work.html">Service</a></li>
-                    <li class="nav-item"><a class="nav-link" href="awards.html">Awards</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                </ul>
+<body class="bg-brand-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="bg-brand-800 text-white shadow-md border-b-4 border-brand-gold">
+        <div class="max-w-6xl mx-auto px-4 py-8 sm:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+                <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Dr. Azam</h1>
+                <p class="text-brand-gold font-medium mt-1 text-lg sm:text-xl">Chairperson, Board of Studies (English)</p>
+                <p class="text-slate-300 text-sm mt-1">Department of English, Vaagdevi Engineering College, Warangal</p>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs md:text-sm">
+                <span class="bg-brand-700 border border-slate-600 px-3 py-1.5 rounded font-medium text-slate-200">NSS Programme Officer</span>
+                <span class="bg-brand-700 border border-slate-600 px-3 py-1.5 rounded font-medium text-slate-200">Department Co-coordinator</span>
             </div>
         </div>
-    </nav>
-    <div class="header text-center mb-5">
-        <h1 style="font-family: 'Playfair Display';">Career & Education</h1>
-        <p>A decade of excellence in higher education</p>
-    </div>
-    <div class="container mb-5">
-        <div class="row g-4">
-            <div class="col-lg-6 col-12">
-                <h3 class="mb-4 text-primary" style="color: var(--navy) !important;">Professional Experience</h3>
-                <div class="timeline-item">
-                   <span class="year-label">2022 - Present</span>
-                   <h4>Assistant Professor of English</h4>
-                   <p class="text-muted">Vaagdevi Engineering College, Warangal</p>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full grid grid-cols-1 gap-8">
+        
+        <!-- Section: Research & IP -->
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
+                <div class="w-2.5 h-6 bg-brand-gold rounded-full"></div>
+                <h2 class="text-2xl font-bold text-brand-700">Academic Publications & Intellectual Property</h2>
+            </div>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-3">Journal Articles & Conference Proceedings</h3>
+                    <ul class="space-y-4">
+                        <li class="bg-brand-50 p-4 rounded-lg border-l-4 border-brand-700">
+                            <span class="block font-semibold text-slate-900">Exploring the Efficacy of ChatGPT in Developing English Vocabulary Skills</span>
+                            <span class="block text-sm text-slate-600 mt-1"><em class="font-medium">AIP Conference Proceedings</em>, Volume 3237, Issue 1 &bull; 28 February 2025</span>
+                        </li>
+                        <li class="bg-brand-50 p-4 rounded-lg border-l-4 border-brand-700">
+                            <span class="block font-semibold text-slate-900">Developing English Communication Skills Among Muslim Minority Communities and Technical Students: Challenges, Needs and Effective Pedagogical Interventions</span>
+                            <span class="block text-sm text-slate-600 mt-1"><em class="font-medium">International Journal of Advance Research and Ideas in Education</em>, Volume 12, Issue 1 &bull; 2026</span>
+                        </li>
+                        <li class="bg-brand-50 p-4 rounded-lg border-l-4 border-brand-700">
+                            <span class="block font-semibold text-slate-900">Barriers to Learning and Teaching English as a Second Language in Minority Contexts: A Comprehensive Analysis of Classroom Practices and Learner Needs</span>
+                            <span class="block text-sm text-slate-600 mt-1"><em class="font-medium">International Journal of Research Publication and Reviews</em>, Volume 6, Issue 12 &bull; ISSN: 2582-7421</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="timeline-item">
-                   <span class="year-label">2014 - 2017</span>
-                   <h4>Lecturer</h4>
-                   <p class="text-muted">Govt. Degree College for Women, Karimnagar </p>
+
+                <div class="pt-2">
+                    <h3 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-3">Patent Publications</h3>
+                    <div class="bg-amber-50/60 p-4 rounded-lg border border-amber-200 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                        <div>
+                            <span class="block font-semibold text-slate-900">Empowering Secondary Education with Digital Portfolios to Strengthen ELT Skills and Speaking Abilities</span>
+                            <span class="inline-block bg-amber-100 text-amber-800 text-xs px-2.5 py-0.5 rounded-full font-medium mt-2">Application No: 202341047825</span>
+                        </div>
+                        <span class="text-sm font-medium text-slate-600 whitespace-nowrap">Published: 01 Sept 2023</span>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <h3 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-3">Books & Book Chapters</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm flex flex-col justify-between">
+                            <p class="text-sm font-semibold text-slate-900">Book: Indian Youth Literature: Mapping Young Minds in Changing India</p>
+                            <p class="text-xs text-slate-500 mt-3 pt-2 border-t border-slate-100">Scientific International Publishing House <br><span class="font-mono">ISBN: 978-93-7196-501-9</span></p>
+                        </div>
+                        <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm flex flex-col justify-between">
+                            <p class="text-sm font-semibold text-slate-900">Chapter: "Weaving words, shaping worlds: The evolving culture of stories and storytelling"</p>
+                            <p class="text-xs text-slate-500 mt-3 pt-2 border-t border-slate-100">Published in Anthology Volume (2025) <br><span class="font-mono">ISBN: 978-81-990809-2-8</span></p>
+                        </div>
+                        <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm flex flex-col justify-between">
+                            <p class="text-sm font-semibold text-slate-900">Chapter: "Assessment strategies: designing equitable and meaningful evaluation systems"</p>
+                            <p class="text-xs text-slate-500 mt-3 pt-2 border-t border-slate-100">Published in Evaluation Frameworks (2026) <br><span class="font-mono">ISBN: 978-81-990809-7-3</span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-12">
-                <h3 class="mb-4 text-success" style="color: var(--navy) !important;">Academic Foundation</h3>
-                <div class="edu-badge">
-                    <strong>Ph.D. English Literature (Pursuing)</strong><br>
-                    <small>Kakatiya University, Warangal (2018-2022)</small>
+        </section>
+
+        <!-- Section: Board of Studies & Curriculum -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Left 2/3: Curriculum Table -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8 md:col-span-2">
+                <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
+                    <div class="w-2.5 h-6 bg-brand-gold rounded-full"></div>
+                    <h2 class="text-2xl font-bold text-brand-700">Curriculum Domains Handled</h2>
                 </div>
+                <div class="overflow-x-auto rounded-lg border border-slate-200">
+                    <table class="min-w-full divide-y divide-slate-200 text-sm">
+                        <thead class="bg-slate-50">
+                            <tr>
+                                <th class="px-4 py-3 text-left font-semibold text-slate-700 tracking-wider">Course / Domain</th>
+                                <th class="px-4 py-3 text-left font-semibold text-slate-700 tracking-wider">Academic Program / Target Focus</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-slate-100">
+                            <tr><td class="px-4 py-3 font-medium text-slate-900">English Theory</td><td class="px-4 py-3 text-slate-600">B.Tech. Program</td></tr>
+                            <tr class="bg-slate-50/50"><td class="px-4 py-3 font-medium text-slate-900">English Language Communication Skills (ELCS)</td><td class="px-4 py-3 text-slate-600">B.Tech. Program</td></tr>
+                            <tr><td class="px-4 py-3 font-medium text-slate-900">Advanced English Communication Skills (AECS)</td><td class="px-4 py-3 text-slate-600">B.Tech. Program</td></tr>
+                            <tr class="bg-slate-50/50"><td class="px-4 py-3 font-medium text-slate-900">Soft Skills & Communication Skills</td><td class="px-4 py-3 text-slate-600">Campus Recruitment Training (CRT)</td></tr>
+                            <tr><td class="px-4 py-3 font-medium text-slate-900">Gender Sensitization</td><td class="px-4 py-3 text-slate-600">B.Tech. Program</td></tr>
+                            <tr class="bg-slate-50/50"><td class="px-4 py-3 font-medium text-slate-900">English for Under Graduate Students</td><td class="px-4 py-3 text-slate-600">B.A. / B.Com. / B.Sc. Programs</td></tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
+
+            <!-- Right 1/3: Board of Studies Info Card -->
+            <div class="bg-brand-700 text-white rounded-xl shadow-sm p-6 sm:p-8 flex flex-col justify-between border-b-4 border-brand-gold">
+                <div>
+                    <h3 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Institutional Leadership</h3>
+                    <h4 class="text-xl font-bold mb-4">Board of Studies (BOS)</h4>
+                    <p class="text-sm text-slate-200 leading-relaxed mb-4">
+                        Serving as the Chairperson of the Board of Studies English for <strong>R23 & R25 Regulations</strong>. Led the design and deployment of the core course structure:
+                    </p>
+                    <blockquote class="border-l-2 border-brand-gold pl-3 text-sm italic text-slate-300 my-4">
+                        "B.Tech 1st Year: English for Enhancement"
+                    </blockquote>
+                </div>
+                <div class="pt-4 border-t border-slate-600 text-xs text-slate-300">
+                    Department of English, Vaagdevi Engineering College
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Jury and Keynote Assignments -->
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
+                <div class="w-2.5 h-6 bg-brand-gold rounded-full"></div>
+                <h2 class="text-2xl font-bold text-brand-700">Jury Panel Assignments & Delegate Delegations</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-4">Invited Jury Member</h3>
+                    <div class="space-y-3">
+                        <div class="p-3 border border-slate-100 rounded-lg bg-brand-50 flex items-start space-x-3">
+                            <span class="text-brand-gold font-bold mt-0.5">&bull;</span>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">District-Level Viksit Bharat Youth Parliament 2026</p>
+                                <p class="text-xs text-slate-600">Govt. Degree College, Thorrur, Mahabubabad &bull; 06-03-26</p>
+                            </div>
+                        </div>
+                        <div class="p-3 border border-slate-100 rounded-lg bg-brand-50 flex items-start space-x-3">
+                            <span class="text-brand-gold font-bold mt-0.5">&bull;</span>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">District-Level Viksit Bharat Youth Parliament 2026</p>
+                                <p class="text-xs text-slate-600">Telangana Tribal Welfare Residential Degree College, Jangaon &bull; 03-03-26</p>
+                            </div>
+                        </div>
+                        <div class="p-3 border border-slate-100 rounded-lg bg-brand-50 flex items-start space-x-3">
+                            <span class="text-brand-gold font-bold mt-0.5">&bull;</span>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">Warangal District-Level Youth Festival '23</p>
+                                <p class="text-xs text-slate-600">Pothana Vignana Peetham, Govt. Music College, Warangal &bull; 23-12-23</p>
+                            </div>
+                        </div>
+                        <div class="p-3 border border-slate-100 rounded-lg bg-brand-50 flex items-start space-x-3">
+                            <span class="text-brand-gold font-bold mt-0.5">&bull;</span>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">Hanamkonda District-Level Yuva Utsav '23</p>
+                                <p class="text-xs text-slate-600">Pingle Govt. Degree College, Waddepally, Hanamkonda &bull; 06-07-23</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-4">State & National Delegate</h3>
+                    <div class="space-y-3 mb-6">
+                        <div class="p-3 border border-slate-100 rounded-lg bg-slate-50 flex items-start space-x-3">
+                            <span class="text-slate-700 font-bold mt-0.5">&bull;</span>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">National Level Youth Festival '24</p>
+                                <p class="text-xs text-slate-600">Nashik, Maharashtra &bull; 12-01-24 to 16-01-24</p>
+                            </div>
+                        </div>
+                        <div class="p-3 border border-slate-100 rounded-lg bg-slate-50 flex items-start space-x-3">
+                            <span class="text-slate-700 font-bold mt-0.5">&bull;</span>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">Telangana State Level Youth Festival '23</p>
+                                <p class="text-xs text-slate-600">Shilparamam, Hyderabad &bull; 05-01-24 to 06-01-24</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-3">Keynote Extension Lectures</h3>
+                    <div class="p-4 bg-slate-900 text-slate-100 rounded-lg text-sm">
+                        <p class="font-medium text-brand-gold">Invited Resource Speaker on LSRW Skills</p>
+                        <p class="text-xs text-slate-400 mt-1">Delivered structured training session on Listening, Speaking, Reading, and Writing proficiency benchmarks at Telangana Social Welfare Residential Degree College, Karimnagar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Extension Lectures (Timeline-style) -->
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
+                <div class="w-2.5 h-6 bg-brand-gold rounded-full"></div>
+                <h2 class="text-2xl font-bold text-brand-700">Invited Motivational Keynotes (2022)</h2>
+            </div>
+            <p class="text-sm text-slate-600 mb-6">An aggregate of community reach and student mentorship sessions conducted throughout prime educational institutions:</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="p-4 rounded-lg bg-brand-50 border border-slate-200 flex flex-col justify-between">
+                    <span class="text-xs font-bold text-brand-700 block mb-2">05 Sept 2022</span>
+                    <p class="text-sm font-medium text-slate-900">MJP Residential School & College</p>
+                    <span class="text-xs text-slate-500 mt-2">Karimnagar</span>
+                </div>
+                <div class="p-4 rounded-lg bg-brand-50 border border-slate-200 flex flex-col justify-between">
+                    <span class="text-xs font-bold text-brand-700 block mb-2">02 Sept 2022</span>
+                    <p class="text-sm font-medium text-slate-900">ZPHS Hasanparthy</p>
+                    <span class="text-xs text-slate-500 mt-2">Warangal</span>
+                </div>
+                <div class="p-4 rounded-lg bg-brand-50 border border-slate-200 flex flex-col justify-between">
+                    <span class="text-xs font-bold text-brand-700 block mb-2">20 Aug 2022</span>
+                    <p class="text-sm font-medium text-slate-900">Kasturba Gandhi School</p>
+                    <span class="text-xs text-slate-500 mt-2">Manakondoor, Karimnagar</span>
+                </div>
+                <div class="p-4 rounded-lg bg-brand-50 border border-slate-200 flex flex-col justify-between">
+                    <span class="text-xs font-bold text-brand-700 block mb-2">31 Mar 2022</span>
+                    <p class="text-sm font-medium text-slate-900">ZPHS Matwada</p>
+                    <span class="text-xs text-slate-500 mt-2">Warangal</span>
+                </div>
+                <div class="p-4 rounded-lg bg-brand-50 border border-slate-200 flex flex-col justify-between">
+                    <span class="text-xs font-bold text-brand-700 block mb-2">20 Feb 2022</span>
+                    <p class="text-sm font-medium text-slate-900">Kasturba Gandhi School</p>
+                    <span class="text-xs text-slate-500 mt-2">Sapthagiri Colony, Karimnagar</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: CSR, NSS, NCC -->
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
+                <div class="w-2.5 h-6 bg-brand-gold rounded-full"></div>
+                <h2 class="text-2xl font-bold text-brand-700">Youth Leadership & Co-Curricular Profiles</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-4">National Integration Camps & Summits</h3>
+                    <div class="relative border-l-2 border-slate-200 pl-4 ml-2 space-y-4 text-sm">
+                        <div>
+                            <span class="absolute -left-[6px] top-1.5 w-2.5 h-2.5 rounded-full bg-brand-700"></span>
+                            <span class="text-xs font-bold text-slate-500">2020</span>
+                            <p class="font-semibold text-slate-900">10th Indian Student Parliament Programme</p>
+                            <p class="text-xs text-slate-600">MIT World Peace University, Vigyan Bhavan, New Delhi (4 Days)</p>
+                        </div>
+                        <div>
+                            <span class="absolute -left-[6px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                            <span class="text-xs font-bold text-slate-500">2013</span>
+                            <p class="font-semibold text-slate-900">National Integration Camp (Porbandar, Gujarat)</p>
+                            <p class="text-xs text-slate-600">Nehru Yuva Kendra, Ministry of Youth Affairs & Sports (7 Days)</p>
+                        </div>
+                        <div>
+                            <span class="absolute -left-[6px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                            <span class="text-xs font-bold text-slate-500">2012</span>
+                            <p class="font-semibold text-slate-900">Inter-State Youth Exchange & Home Stay Programme</p>
+                            <p class="text-xs text-slate-600">Shillong, Meghalaya &bull; Rajiv Gandhi Institute of Youth Development</p>
+                        </div>
+                        <div>
+                            <span class="absolute -left-[6px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                            <span class="text-xs font-bold text-slate-500">2012</span>
+                            <p class="font-semibold text-slate-900">National Integration Camp (Pune) & 2nd Student Parliament</p>
+                            <p class="text-xs text-slate-600">MIT School of Government, Pune, Maharashtra</p>
+                        </div>
+                        <div>
+                            <span class="absolute -left-[6px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                            <span class="text-xs font-bold text-slate-500">2010</span>
+                            <p class="font-semibold text-slate-900">All India Inter-University National Integration Camp</p>
+                            <p class="text-xs text-slate-600">Foundation for Amity and National Solidarity (5 Days)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-3">National Cadet Corps (NCC) Background</h3>
+                        <div class="bg-brand-50 p-4 rounded-lg border border-slate-200 text-sm">
+                            <p class="font-semibold text-slate-900">NCC 'A' Certificate — Qualified with Grading B (2005)</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Issued by NCC Directorate, Secunderabad, AP</p>
+                            <ul class="mt-3 space-y-1.5 text-xs text-slate-600 list-disc list-inside">
+                                <li>Attended Annual Training Camp at Tara Govt College, Sangareddy (2005)</li>
+                                <li>Attended Combined Annual Training Camp at Malkapur, Karimnagar (2004)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-3">Public Welfare & Specialized Training</h3>
+                        <div class="space-y-2 text-xs">
+                            <div class="bg-slate-50 p-3 rounded border border-slate-200 flex justify-between items-center">
+                                <div>
+                                    <p class="font-medium text-slate-900">Consumer Rights Grievances Redressal Course</p>
+                                    <p class="text-slate-500">Dr. MCR HRD Institute, Hyderabad (3 Days)</p>
+                                </div>
+                                <span class="text-slate-500 font-medium">2017</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded border border-slate-200 flex justify-between items-center">
+                                <div>
+                                    <p class="font-medium text-slate-900">Training Program for Young Leaders</p>
+                                    <p class="text-slate-500">Foundation for Democratic Reforms, Hyderabad</p>
+                                </div>
+                                <span class="text-slate-500 font-medium">2012</span>
+                            </div>
+                            <div class="bg-red-50 text-red-900 p-3 rounded border border-red-100 flex items-center justify-between">
+                                <p class="font-medium">Voluntary Blood Donor (Indian Red Cross Society)</p>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded font-mono">2010, 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Literary Awards -->
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
+                <div class="w-2.5 h-6 bg-brand-gold rounded-full"></div>
+                <h2 class="text-2xl font-bold text-brand-700">Major Literary Honors & Competitions</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                <div class="border border-slate-100 p-3.5 rounded-lg shadow-sm bg-gradient-to-br from-yellow-50/40 to-white">
+                    <span class="inline-block bg-amber-100 text-amber-800 font-bold text-xs px-2 py-0.5 rounded mb-2">First Prize</span>
+                    <p class="font-medium text-slate-900">Elocution Competition</p>
+                    <p class="text-xs text-slate-500 mt-1">National Consumer Day, District Information Center, Karimnagar</p>
+                </div>
+                <div class="border border-slate-100 p-3.5 rounded-lg shadow-sm bg-gradient-to-br from-yellow-50/40 to-white">
+                    <span class="inline-block bg-amber-100 text-amber-800 font-bold text-xs px-2 py-0.5 rounded mb-2">First Prize (x3)</span>
+                    <p class="font-medium text-slate-900">Elocution & Essay Writing</p>
+                    <p class="text-xs text-slate-500 mt-1">Rajiv Sadbhavana Divas, District Authorities, Karimnagar</p>
+                </div>
+                <div class="border border-slate-100 p-3.5 rounded-lg shadow-sm bg-gradient-to-br from-yellow-50/40 to-white">
+                    <span class="inline-block bg-amber-100 text-amber-800 font-bold text-xs px-2 py-0.5 rounded mb-2">First Prize</span>
+                    <p class="font-medium text-slate-900">Elocution Contest</p>
+                    <p class="text-xs text-slate-500 mt-1">Republic Day Celebrations & College Day Festivities, SRR GDC</p>
+                </div>
+                <div class="border border-slate-100 p-3.5 rounded-lg shadow-sm bg-slate-50/40">
+                    <span class="inline-block bg-slate-200 text-slate-800 font-bold text-xs px-2 py-0.5 rounded mb-2">Second Prize</span>
+                    <p class="font-medium text-slate-900">Essay Writing Competition</p>
+                    <p class="text-xs text-slate-500 mt-1">National Voters Day, Organized by District Authorities, Karimnagar</p>
+                </div>
+                <div class="border border-slate-100 p-3.5 rounded-lg shadow-sm bg-slate-50/40">
+                    <span class="inline-block bg-slate-200 text-slate-800 font-bold text-xs px-2 py-0.5 rounded mb-2">Second Prize</span>
+                    <p class="font-medium text-slate-900">Elocution Assignment</p>
+                    <p class="text-xs text-slate-500 mt-1">World Population Day, Medical & Health Department, Karimnagar</p>
+                </div>
+                <div class="border border-slate-100 p-3.5 rounded-lg shadow-sm bg-slate-50/40">
+                    <span class="inline-block bg-slate-200 text-slate-800 font-bold text-xs px-2 py-0.5 rounded mb-2">Second Prize</span>
+                    <p class="font-medium text-slate-900">Doctors Day Elocution</p>
+                    <p class="text-xs text-slate-500 mt-1">Organized by Lions Club of Satavahana, Karimnagar</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-800 text-slate-400 text-xs py-6 mt-12 border-t border-slate-700">
+        <div class="max-w-6xl mx-auto px-4 text-center sm:flex sm:justify-between sm:items-center">
+            <p>&copy; 2026 Dr. Azam. Academic Portfolio Workspace.</p>
+            <p class="mt-2 sm:mt-0 text-slate-500">Vaagdevi Engineering College &bull; JNTUH Syllabus Management</p>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </footer>
+
 </body>
 </html>

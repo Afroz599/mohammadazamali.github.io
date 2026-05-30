@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awards & Recognition | Dr.MD Azam Ali</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --navy: #0B1F3A; --white: #FFFFFF; --gold: #C9A24D; --grey: #F4F6F8; --charcoal: #2E2E2E; }
+        :root { 
+            --navy: #0B1F3A; 
+            --white: #FFFFFF; 
+            --gold: #C9A24D; 
+            --grey: #F4F6F8; 
+            --charcoal: #2E2E2E; 
+            --slate-200: #E2E8F0;
+            --slate-600: #475569;
+        }
         body { font-family: 'Inter', sans-serif; background-color: var(--grey); color: var(--charcoal); margin: 0; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
 
         /* Navigation */
         .navbar { background: var(--navy); border-bottom: 4px solid var(--gold); }
@@ -29,8 +37,109 @@
         .medal-icon { color: var(--gold); font-size: 1.5rem; margin-bottom: 10px; }
         .award-divider { width: 60px; height: 3px; background: var(--gold); margin: 20px 0; }
         
-        .sub-award-card { background: var(--white); border: 1px solid #eee; padding: 25px; height: 100%; transition: 0.3s; }
-        .sub-award-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        /* Premium 3x3 Grid Matrix Custom Styles */
+        .award-grid-item {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: 6px;
+            padding: 24px;
+            height: 100%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .award-grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(201,162,77,0.15);
+        }
+        .award-grid-title {
+            color: var(--navy);
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 14px;
+            min-height: 54px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .award-grid-image-container {
+            background: var(--grey);
+            border-radius: 4px;
+            overflow: hidden;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            margin-bottom: 14px;
+            border: 1px solid var(--slate-200);
+        }
+        .award-grid-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .award-grid-info {
+            font-size: 0.9rem;
+            color: var(--slate-600);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Achievements and Accolades Display Cards */
+        .prestige-card {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: 6px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            margin-bottom: 35px;
+        }
+        .section-indicator {
+            width: 5px;
+            background: var(--gold);
+            border-radius: 4px;
+            margin-right: 14px;
+        }
+        .section-title-custom {
+            font-family: 'Playfair Display', serif;
+            color: var(--navy);
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 1.6rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Lists Systems */
+        .medal-list, .accolade-list {
+            padding-left: 0;
+            margin: 0;
+        }
+        .medal-list li, .accolade-list li {
+            position: relative;
+            list-style: none;
+            padding-left: 30px;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+        .medal-list li::before {
+            content: "🏅";
+            position: absolute;
+            left: 0;
+            top: 1px;
+            font-size: 1.1rem;
+        }
+        .accolade-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 5px;
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
         
         .btn-gold-outline { border: 2px solid var(--gold); color: var(--navy); padding: 10px 25px; font-weight: bold; text-decoration: none; display: inline-block; transition: 0.3s; margin-top: 15px; }
         .btn-gold-outline:hover { background: var(--gold); color: var(--white); }
@@ -39,7 +148,7 @@
         @media (max-width: 768px) {
             .featured-award { margin-top: 0; padding: 20px; border-radius: 0; }
             .award-divider { margin: 15px auto; }
-            .col-md-6.ps-md-5 { text-align: center; } /* Center text on mobile */
+            .col-md-6.ps-md-5 { text-align: center; }
         }
     </style>
 </head>
@@ -86,7 +195,7 @@
                             <h2 style="color: var(--navy);">Indira Gandhi NSS National Award</h2>
                             <p class="text-muted fw-bold">Presented by the President of India | 2013</p>
                             <div class="award-divider"></div>
-                            <p class="lead" style="color: var(--charcoal); font-size: 1rem;">One of the highest civilian honors for youth and social service in India. Honored at Rashtrapati Bhavan, New Delhi, for exceptional contribution to community development through the National Service Scheme.</p>
+                            <p class="lead" style="color: var(--charcoal); font-size: 1rem;">One of the highest civilian honors for youth and social service in India. Conferred under the Best Volunteer Category for the year 2012‑13 by the Ministry of Youth Affairs and Sports, Govt. of India, and honored at Rashtrapati Bhavan, New Delhi.</p>
                             <a href="gallery.html" class="btn-gold-outline">View Ceremony Gallery</a>
                         </div>
                     </div>
@@ -94,26 +203,150 @@
             </div>
         </div>
 
+        <!-- 3x3 Grid with 9 Award Matrix Items -->
         <div class="row mt-5 g-4">
-            <div class="col-md-6 col-12">
-                <div class="sub-award-card">
-                    <div class="award-img-holder">
-                        <img src="https://static.wixstatic.com/media/9bbd54_20fd869391134a68a32fd632e63badf3~mv2.jpg/v1/fit/w_750,h_868,q_90,enc_avif,quality_auto/9bbd54_20fd869391134a68a32fd632e63badf3~mv2.jpg" class="img-fluid" alt="National Youth Award">
+            <!-- Grid Item 1 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="award-grid-item">
+                    <h4 class="award-grid-title">1. Indira Gandhi NSS National Award</h4>
+                    <div class="award-grid-image-container">
+                        <img src="https://static.wixstatic.com/media/9bbd54_8e899b2cedfc4cbd9e8b4e73d5b878a8~mv2.jpg/v1/fit/w_1180,h_786,q_90,enc_avif,quality_auto/9bbd54_8e899b2cedfc4cbd9e8b4e73d5b878a8~mv2.jpg" alt="Indira Gandhi NSS National Award" class="award-grid-img">
                     </div>
-                    <h3 style="color: var(--navy);">National Youth Award</h3>
-                    <p style="color: var(--gold); font-weight: bold;">Govt. of India | 2017-18</p>
-                    <p>Recognized by the Ministry of Youth Affairs and Sports for consistent dedication to social transformation.</p>
+                    <p class="award-grid-info">Awarded under the Best Volunteer Category for the year 2012‑13 by the Ministry of Youth Affairs and Sports, Govt. of India. Presented by the President of India at Rashtrapati Bhavan.</p>
                 </div>
             </div>
 
-            <div class="col-md-6 col-12">
-                <div class="sub-award-card">
-                    <div class="award-img-holder">
-                        <img src="https://static.wixstatic.com/media/9bbd54_038a1b3d16014ef8a6ac052c8be6e9f4~mv2.jpg/v1/fill/w_1901,h_913,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/9bbd54_038a1b3d16014ef8a6ac052c8be6e9f4~mv2.jpg" class="img-fluid" alt="Academic Award">
+            <!-- Grid Item 2 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="award-grid-item">
+                    <h4 class="award-grid-title">2. National Youth Award</h4>
+                    <div class="award-grid-image-container">
+                        <img src="https://static.wixstatic.com/media/9bbd54_20fd869391134a68a32fd632e63badf3~mv2.jpg/v1/fit/w_750,h_868,q_90,enc_avif,quality_auto/9bbd54_20fd869391134a68a32fd632e63badf3~mv2.jpg" alt="National Youth Award" class="award-grid-img">
                     </div>
-                    <h3 style="color: var(--navy);">Outstanding Academic Service</h3>
-                    <p style="color: var(--gold); font-weight: bold;">Institutional Honors</p>
-                    <p>Commended for excellence in English Language Teaching and ESL workshops.</p>
+                    <p class="award-grid-info">Conferred for the year 2017‑18 by the Ministry of Youth Affairs and Sports, Govt. of India, at Vigyan Bhavan, New Delhi, for deep dedication to social transformation.</p>
+                </div>
+            </div>
+
+            <!-- Grid Item 3 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="award-grid-item">
+                    <h4 class="award-grid-title">3. Maulana Azad National Award</h4>
+                    <div class="award-grid-image-container">
+                        <img src="images/award_maulana_azad.jpg" alt="Maulana Azad National Award" class="award-grid-img" onerror="this.src='https://via.placeholder.com/400x300?text=Maulana+Azad+Award'">
+                    </div>
+                    <p class="award-grid-info">Conferred in 2018 by the Bahujana Sahitya Academy, India, honoring outstanding performance milestones and exceptional public contributions.</p>
+                </div>
+            </div>
+
+            <!-- Grid Item 4 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="award-grid-item">
+                    <h4 class="award-grid-title">4. Rashtriya Gaurav Samman Award</h4>
+                    <div class="award-grid-image-container">
+                        <img src="images/award_rashtriya_gaurav.jpg" alt="Rashtriya Gaurav Samman Award" class="award-grid-img" onerror="this.src='https://via.placeholder.com/400x300?text=Rashtriya+Gaurav+Samman'">
+                    </div>
+                    <p class="award-grid-info">Awarded in 2018 by the National Youth Awardees Federation of India, recognizing youth leadership excellence and commitment to nation-building.</p>
+                </div>
+            </div>
+
+            <!-- Grid Item 5 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="award-grid-item">
+                    <h4 class="award-grid-title">5. Ambedkar National Award</h4>
+                    <div class="award-grid-image-container">
+                        <img src="images/award_ambedkar.jpg" alt="Ambedkar National Award" class="award-grid-img" onerror="this.src='https://via.placeholder.com/400x300?text=Ambedkar+National+Award'">
+                    </div>
+                    <p class="award-grid-info">Presented in 2019 by the Dalita Sahithya Academy, New Delhi, honoring continuous community welfare services and impactful social work designs.</p>
+                </div>
+            </div>
+
+            <!-- Grid Item 6 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="award-grid-item">
+                    <h4 class="award-grid-title">6. State‑level Pratibha Puraskar Award</h4>
+                    <div class="award-grid-image-container">
+                        <img src="https://static.wixstatic.com/media/9bbd54_038a1b3d16014ef8a6ac052c8be6e9f4~mv2.jpg/v1/fill/w_1901,h_913,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/9bbd54_038a1b3d16014ef8a6ac052c8be6e9f4~mv2.jpg" alt="State-level Pratibha Puraskar Award" class="award-grid-img">
+                    </div>
+                    <p class="award-grid-info">Conferred in 2008 by the Department of Higher Education, Govt. of Andhra Pradesh, for securing the absolute highest marks framework across Intermediate education.</p>
+                </div>
+            </div>
+
+            <!-- Grid Item 7 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="award-grid-item">
+                    <h4 class="award-grid-title">7. State Best NSS Volunteer Award</h4>
+                    <div class="award-grid-image-container">
+                        <img src="images/award_state_nss.jpg" alt="State Best NSS Volunteer Award" class="award-grid-img" onerror="this.src='https://via.placeholder.com/400x300?text=State+Best+NSS+Volunteer'">
+                    </div>
+                    <p class="award-grid-info">Conferred for the year 2012-13 by the Department of Higher Education, Govt. of Andhra Pradesh, acknowledging outstanding performance across state university levels.</p>
+                </div>
+            </div>
+
+            <!-- Grid Item 8 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="award-grid-item">
+                    <h4 class="award-grid-title">8. Telangana State Ideal Teacher Award</h4>
+                    <div class="award-grid-image-container">
+                        <img src="images/award_ideal_teacher.jpg" alt="Telangana State Ideal Teacher Award" class="award-grid-img" onerror="this.src='https://via.placeholder.com/400x300?text=Ideal+Teacher+Award'">
+                    </div>
+                    <p class="award-grid-info">Conferred in 2021 by the All India Ideal Teachers Association, marking pedagogical commitment, excellence in teaching, and student mentorship.</p>
+                </div>
+            </div>
+
+            <!-- Grid Item 9 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="award-grid-item">
+                    <h4 class="award-grid-title">9. Mahatma Gandhi Sadbhavana Award</h4>
+                    <div class="award-grid-image-container">
+                        <img src="images/award_gandhi_sadbhavana.jpg" alt="Mahatma Gandhi Sadbhavana Award" class="award-grid-img" onerror="this.src='https://via.placeholder.com/400x300?text=Mahatma+Gandhi+Sadbhavana'">
+                    </div>
+                    <p class="award-grid-info">Conferred in 2023 by the Sadhvana Forum, Karimnagar, celebrating continuous dedication to communal harmony, social ethics, and public welfare pathways.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievements & Accolades Sections -->
+        <div class="row mt-5 pt-4">
+            <div class="col-lg-12">
+                <p class="lead text-muted text-center mb-5" style="max-width: 850px; margin: 0 auto; font-size: 1.1rem;">
+                    Dr. Azam Ali received numerous awards for his academic excellence and social service. Major distinctions include:
+                </p>
+            </div>
+            
+            <!-- Achievements Column -->
+            <div class="col-lg-6 col-12 mb-4">
+                <div class="prestige-card h-100">
+                    <div class="d-flex align-items-center pb-3 mb-4 border-bottom">
+                        <div class="section-indicator" style="height: 30px;"></div>
+                        <h2 class="section-title-custom">Achievements</h2>
+                    </div>
+                    <ul class="medal-list">
+                        <li><span class="fw-bold">Silver Medal as a College Topper:</span> H.E.C. Stream, Govt. Arts Junior College, Karimnagar (2005-06).</li>
+                        <li><span class="fw-bold">Gold Medal as a Best NSS Volunteer:</span> Awarded in 2010-11 at SRR Govt. Degree College, Karimnagar.</li>
+                        <li><span class="fw-bold">Gold Medal for Literary Excellence:</span> Conferred in 2010-11 at SRR Govt. Degree College, Karimnagar.</li>
+                        <li><span class="fw-bold">University Entrance Examination Topper:</span> Secured Rank 1 in the Kakatiya University Ph.D. English Entrance Exam (2017).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Accolades Column -->
+            <div class="col-lg-6 col-12 mb-4">
+                <div class="prestige-card h-100">
+                    <div class="d-flex align-items-center pb-3 mb-4 border-bottom">
+                        <div class="section-indicator" style="height: 30px;"></div>
+                        <h2 class="section-title-custom">Accolades</h2>
+                    </div>
+                    <ul class="accolade-list">
+                        <li><strong>Smt. Droupadi Murmu</strong> &ndash; Hon'ble President of India</li>
+                        <li><strong>Shri M. Venkaiah Naidu Garu</strong> &ndash; Hon'ble Former Vice President of India</li>
+                        <li><strong>Dr. Tamilisai Soundararajan</strong> &ndash; Then Hon'ble Governor of Telangana</li>
+                        <li><strong>Shri Bandi Sanjay Kumar Garu</strong> &ndash; Hon'ble Minister of State for Home Affairs</li>
+                        <li><strong>Professor Shantha Sinha Garu</strong> &ndash; Ramon Magsaysay Awardee & Former Chairperson, National Commission for Protection of Child Rights, Govt. of India</li>
+                        <li><strong>Padmabhushan Shri Anna Hazare Ji</strong> &ndash; Noted Social Reformer</li>
+                        <li><strong>Padmashri Vanajeevi Ramaiah Garu</strong> &ndash; Environmentalist Activist</li>
+                        <li><strong>Shri Jayaprakash Narayan</strong> &ndash; Former IAS and Founder, Foundation for Democratic Reforms</li>
+                        <li><strong>Shri V.V. Lakshminarayana</strong> &ndash; Former CBI Joint Director</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -121,7 +354,7 @@
     
     <footer style="background: var(--navy); color: var(--white); padding: 40px 0; border-top: 5px solid var(--gold);">
         <div class="container text-center">
-            <p style="margin: 0; opacity: 0.8;">© 2024 Dr. Mohammad Azam Ali. All Rights Reserved.</p>
+            <p style="margin: 0; opacity: 0.8;">© 2026 Dr. Mohammad Azam Ali. All Rights Reserved.</p>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

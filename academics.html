@@ -31,10 +31,29 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-brand-50 text-slate-800 antialiased min-h-screen flex flex-col">
+<body class="bg-brand-50 text-slate-800 antialiased min-h-screen flex flex-col pt-16">
 
-    <!-- Header Section -->
-    <header class="bg-brand-800 text-white shadow-md border-b-4 border-brand-gold">
+    <!-- NEW UPPER GLOBAL PANEL (Navigation Header) -->
+    <nav class="bg-brand-800 text-white fixed top-0 left-0 right-0 z-50 shadow-md border-b border-brand-700">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <!-- Brand / Logo Identity -->
+            <a href="index.html" class="flex items-center space-x-2 text-white hover:text-brand-gold transition duration-150">
+                <span class="font-bold text-lg tracking-wider uppercase font-mono">DR. AZAM</span>
+                <span class="text-xs bg-brand-gold text-brand-800 px-2 py-0.5 rounded font-bold hidden sm:inline-block">PORTFOLIO</span>
+            </a>
+            
+            <!-- Navigation Links -->
+            <div class="flex items-center space-x-1 sm:space-x-4 text-sm font-medium">
+                <a href="index.html" class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-brand-700 transition duration-150">Home</a>
+                <a href="academic.html" class="px-3 py-2 rounded-md text-brand-gold bg-brand-700/50 border border-brand-gold/30 transition duration-150" aria-current="page">Academic Profile</a>
+                <a href="#research" class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-brand-700 transition duration-150 hidden sm:inline-block">Research</a>
+                <a href="#activities" class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-brand-700 transition duration-150 hidden sm:inline-block">Activities</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Identity Banner Section -->
+    <header class="bg-brand-800 text-white shadow-md border-b-4 border-brand-gold mt-1">
         <div class="max-w-6xl mx-auto px-4 py-8 sm:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
                 <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Dr. Azam</h1>
@@ -52,7 +71,7 @@
     <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full grid grid-cols-1 gap-8">
         
         <!-- Section: Research & IP -->
-        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
+        <section id="research" class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8scroll-mt-20">
             <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
                 <div class="w-2.5 h-6 bg-brand-gold rounded-full"></div>
                 <h2 class="text-2xl font-bold text-brand-700">Academic Publications & Intellectual Property</h2>
@@ -232,37 +251,37 @@
             </div>
             <p class="text-sm text-slate-600 mb-6">An aggregate of community reach and student mentorship sessions conducted throughout prime educational institutions:</p>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm">
                 <div class="p-4 rounded-lg bg-brand-50 border border-slate-200 flex flex-col justify-between">
                     <span class="text-xs font-bold text-brand-700 block mb-2">05 Sept 2022</span>
-                    <p class="text-sm font-medium text-slate-900">MJP Residential School & College</p>
+                    <p class="font-medium text-slate-900">MJP Residential School & College</p>
                     <span class="text-xs text-slate-500 mt-2">Karimnagar</span>
                 </div>
                 <div class="p-4 rounded-lg bg-brand-50 border border-slate-200 flex flex-col justify-between">
                     <span class="text-xs font-bold text-brand-700 block mb-2">02 Sept 2022</span>
-                    <p class="text-sm font-medium text-slate-900">ZPHS Hasanparthy</p>
+                    <p class="font-medium text-slate-900">ZPHS Hasanparthy</p>
                     <span class="text-xs text-slate-500 mt-2">Warangal</span>
                 </div>
                 <div class="p-4 rounded-lg bg-brand-50 border border-slate-200 flex flex-col justify-between">
                     <span class="text-xs font-bold text-brand-700 block mb-2">20 Aug 2022</span>
-                    <p class="text-sm font-medium text-slate-900">Kasturba Gandhi School</p>
+                    <p class="font-medium text-slate-900">Kasturba Gandhi School</p>
                     <span class="text-xs text-slate-500 mt-2">Manakondoor, Karimnagar</span>
                 </div>
                 <div class="p-4 rounded-lg bg-brand-50 border border-slate-200 flex flex-col justify-between">
                     <span class="text-xs font-bold text-brand-700 block mb-2">31 Mar 2022</span>
-                    <p class="text-sm font-medium text-slate-900">ZPHS Matwada</p>
+                    <p class="font-medium text-slate-900">ZPHS Matwada</p>
                     <span class="text-xs text-slate-500 mt-2">Warangal</span>
                 </div>
                 <div class="p-4 rounded-lg bg-brand-50 border border-slate-200 flex flex-col justify-between">
                     <span class="text-xs font-bold text-brand-700 block mb-2">20 Feb 2022</span>
-                    <p class="text-sm font-medium text-slate-900">Kasturba Gandhi School</p>
+                    <p class="font-medium text-slate-900">Kasturba Gandhi School</p>
                     <span class="text-xs text-slate-500 mt-2">Sapthagiri Colony, Karimnagar</span>
                 </div>
             </div>
         </section>
 
         <!-- Section: CSR, NSS, NCC -->
-        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
+        <section id="activities" class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8 scroll-mt-20">
             <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
                 <div class="w-2.5 h-6 bg-brand-gold rounded-full"></div>
                 <h2 class="text-2xl font-bold text-brand-700">Youth Leadership & Co-Curricular Profiles</h2>

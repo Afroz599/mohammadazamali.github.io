@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Impact | Dr.MD Azam Ali</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         /* 1. Define Colors */
         :root {
-            --navy: #0B1F3A; 
+            --navy: #0A192F; /* Synced dark navy matching portfolio system */
+            --navy-light: #1A365D;
             --gold: #C9A24D; 
             --green: #1B5E20; 
             --white: #FFFFFF; 
@@ -29,10 +30,35 @@
         
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
-        /* 3. Navigation Bar */
-        .navbar { background: var(--navy); border-bottom: 4px solid var(--gold); padding: 1rem 0; }
-        .nav-link { color: var(--white) !important; font-weight: 600; text-transform: uppercase; margin: 0 10px; }
-        .nav-link:hover { color: var(--gold) !important; }
+        /* --- EXACT MATCH NAVBAR DESIGN SYSTEM (AS PER IMAGE) --- */
+        .navbar {
+            background-color: var(--navy) !important;
+            border-bottom: 4px solid var(--gold) !important; 
+            padding: 20px 0 !important;                      
+        }
+        .navbar-brand {
+            font-family: 'Inter', sans-serif;
+            color: var(--white) !important;
+            font-weight: 800 !important;                     
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .nav-link {
+            color: var(--white) !important;                  
+            font-weight: 700 !important;                     
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;                             
+            padding: 6px 18px !important;                    
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: var(--gold) !important;                   
+        }
+        .nav-item.active .nav-link {
+            color: var(--gold) !important;                   
+        }
 
         /* 4. Page Header */
         .header-bg { 
@@ -49,7 +75,7 @@
             padding: 40px; 
             border: 1px solid #ddd; /* Safety Border */
             border-left: 10px solid var(--green); 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
             margin-bottom: 30px;
             border-radius: 5px;
         }
@@ -70,30 +96,42 @@
             position: relative; 
             list-style: none; 
             padding-left: 25px; 
-            font-size: 1.1rem;
+            font-size: 1.05rem;
+            line-height: 1.5;
         }
         .service-list li::before { 
             content: "◈"; 
             position: absolute; 
             left: 0; 
             color: var(--gold); 
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .sub-timeline-title {
+            font-weight: 700;
+            color: var(--navy);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <!-- Top Bar Navigation Map (Matches Image Exactly) -->
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">DR. MD. AZAM ALI</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="index.html">DR. MD. AZAM ALI</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="about.html">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="academics.html">Academics</a></li>
-                    <li class="nav-item"><a class="nav-link" href="social-work.html">Service</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="social-work.html">Service</a></li>
                     <li class="nav-item"><a class="nav-link" href="awards.html">Awards</a></li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                 </ul>
@@ -101,6 +139,7 @@
         </div>
     </nav>
 
+    <!-- Page Header Panel -->
     <div class="header-bg text-center">
         <div class="container">
             <h1 class="display-4 fw-bold">Social Responsibility</h1>
@@ -108,27 +147,57 @@
         </div>
     </div>
 
+    <!-- Main Stream Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto col-12">
                 
+                <!-- Card 1: Chamak Foundation -->
                 <div class="impact-card">
-                  <h2 class="section-title">Chamak Foundation </h2>
-                    <p>As the <strong>Founder President</strong>, Dr. Azam Ali leads "Chamak Padhai Se," a non-profit initiative focused on empowering students through academic resources and counseling.</p>
+                    <h2 class="section-title">Chamak Foundation</h2>
+                    <p>Founded on <strong>October 6, 2023</strong>, in Hyderabad in the presence of Professor Shanta Sinha, the foundation implements its core mission "Chamak Padhai Se". Driven by the philosophies of Maulana Abul Kalam Azad and Dr. A.P.J. Abdul Kalam, it uses education as a primary tool to lift underprivileged student streams out of poverty.</p>
                     <ul class="service-list">
-                        <li>Established two motivational libraries for students.</li>
-                     <li>Donated English grammar and motivational books.</li>
-                  <li>Conducted programs on life skills and guidance counseling.</li>
+                        <li>Established operational libraries stacked with thousands of academic and inspirational resources at ZPHS Matwada and Rangapoor village.</li>
+                        <li>Delivered recurring language workshops, specialized English grammar courses, and interactive personality enhancement bootcamps at multiple Government and Kasturba Gandhi Balika Vidyalayas (KGBV).</li>
+                        <li>Provided direct financial infrastructure assistance to deserving scholars navigating higher professional tracks, including M.Pharmacy, M.Phil, M.A., BLISC, and B.Ed programs.</li>
+                        <li>Conducted structured motivational modules and counseling setups across rural networks to strengthen student accessibility to knowledge and mental fortitude.</li>
                     </ul>
                 </div>
 
+                <!-- Card 2: NSS Core Profile -->
                 <div class="impact-card" style="border-left-color: var(--navy);">
-                   <h2 class="section-title">National Service Scheme (NSS)</h2>
-                   <p>A legacy of 8 years as a Volunteer, Student Coordinator, and Team Leader (2006-2014).</p>
+                    <h2 class="section-title">National Service Scheme (NSS)</h2>
+                    <p>A continuous, high-impact timeline running across structural institutional operational tiers as a Volunteer, Student Coordinator, and recognized Regional Team Leader under the initial guidance of Dr. S. Manohara Chary.</p>
+                    
+                    <div class="sub-timeline-title">Milestone Deployments & Mega Camps</div>
                     <ul class="service-list">
-                        <li>Organized blood donation drives and medical camps.</li>
-                        <li>Led village adoption programs and tree plantations</li>
-                       <li>Participated in National Integration Camps and youth exchange programs.</li>
+                        <li><strong>National Tiers:</strong> Selected for the 7-Day National Integration Camp in Pune, Maharashtra (2012), the 10-Day Inter-State Youth Exchange & Homestay Programme in Shillong, Meghalaya, and the National Integration Camp at Porbandar, Gujarat (2013).</li>
+                        <li><strong>Regional & University Campaigns:</strong> Deployed to consecutive 7-Day Kakatiya University Level Mega Camps (2009, 2010), Inter-District Mega Camps at Medaram, and winter community camps across Durshed, Gopalpoor, Chamanapally, and Sitarampur villages.</li>
+                        <li><strong>Primary Action Programs:</strong> Supervised localized tree plantation drives (Vanamahotsav), village adoptions, pulse polio immunization runs, health camps, child labor eradication monitoring, and strict voter awareness campaigns.</li>
+                        <li><strong>Resource Assignments:</strong> Appointed as an invited orientation resource speaker at the Kakatiya University NSS Cell volunteer training operations (2017) and the District-Level Drug De-addiction Campaign (2019).</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Civic Action & Governance Awareness -->
+                <div class="impact-card">
+                    <h2 class="section-title">Civic Awareness & Governance Reforms</h2>
+                    <p>Deeply influenced by the administrative ethics of former IAS Officer Dr. Jayaprakash Narayan, Dr. Azam Ali has actively advocated for transparent civic administration and legislative awareness tracking.</p>
+                    <ul class="service-list">
+                        <li>Partnered on public awareness operations concerning the Right to Information (RTI) Act, localized consumer rights protection, and democratic election monitoring rules.</li>
+                        <li>Completed advanced training in Consumer Rights Awareness and Grievance Redressal systems at the Dr. MCR HRD Institute in Hyderabad (2017).</li>
+                        <li>Mobilized student communities in support of anti-corruption frameworks, aligning local awareness movements with Anna Hazare's national Lokpal framework.</li>
+                        <li>Represented regional student blocks at the 4-Day 10th Indian Student Parliament assembly at Vigyan Bhavan, New Delhi (2020), championing ethical leadership paradigms.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Historical Movements & Disaster Management -->
+                <div class="impact-card" style="border-left-color: var(--navy);">
+                    <h2 class="section-title">Movements & Crisis Relief Campaigns</h2>
+                    <p>A lifelong commitment to community stabilization, spanning major regional historical movements and large-scale emergency relief operations.</p>
+                    <ul class="service-list">
+                        <li><strong>Telangana Statehood Movement:</strong> Actively participated in mass regional advocacy campaigns throughout undergraduate years, including the historical Million March, Sakala Janula Samme, and Sakad Bandh roadblocks. Formally presented educational and student welfare issues to the visiting Sri Krishna Committee.</li>
+                        <li><strong>2004 Tsunami Relief:</strong> Initiated early-career fundraising operations as an SGT Rank NCC Cadet (9 (A) BN, Karimnagar), systematically collecting and executing donation distributions through the District Collector's office.</li>
+                        <li><strong>2009 Andhra Pradesh Floods:</strong> Directed critical emergency student mobilization drives, collecting ₹10,000 cash reserves alongside 1,000 learning notebooks for fast distribution throughout affected flood sectors.</li>
                     </ul>
                 </div>
 
@@ -136,7 +205,7 @@
         </div>
     </div>
 
+    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
